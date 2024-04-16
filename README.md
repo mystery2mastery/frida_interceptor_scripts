@@ -8,7 +8,7 @@ This is a collection of Frida Interceptor definitions for Windows API that are c
 - [x] LoadLibraryExA
 - [x] LoadLibraryW
 - [x] LoadLibraryExW
-- [ ] GetProcAddress
+- [x] GetProcAddress
 - [ ] GetModuleHandle
 - [ ] ShellExecute
 - [ ] ShellExecuteEx
