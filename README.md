@@ -13,9 +13,8 @@ This is a collection of Frida Interceptor definitions for Windows API that are c
 - [x] GetModuleHandleW
 - [x] GetModuleHandleExA
 - [x] GetModuleHandleExW
+- [x] WinExec
 - [ ] ShellExecute
-- [ ] ShellExecuteEx
-- [ ] WinExec
 
 ### Memory
 
