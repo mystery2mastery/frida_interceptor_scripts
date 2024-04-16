@@ -5,11 +5,14 @@ This is a collection of Frida Interceptor definitions for Windows API that are c
 ### Generic
 
 - [x] LoadLibraryA
-- [x] LoadLibraryExA
 - [x] LoadLibraryW
+- [x] LoadLibraryExA
 - [x] LoadLibraryExW
 - [x] GetProcAddress
-- [ ] GetModuleHandle
+- [x] GetModuleHandleA
+- [x] GetModuleHandleW
+- [x] GetModuleHandleExA
+- [x] GetModuleHandleExW
 - [ ] ShellExecute
 - [ ] ShellExecuteEx
 - [ ] WinExec

@@ -1,10 +1,22 @@
-
 Interceptor.attach(Module.getExportByName(null, "LoadLibraryA"), {
   onEnter: function (args) {
     // Function: LoadLibraryA
     console.log("\n[+] LoadLibraryA:");
     // LPCSTR lpLibFileName
     console.log("\tlpLibFileName: " + args[0].readAnsiString());
+
+  },
+  onLeave: function (retval) {       
+    console.log("Return value: " + retval);
+  }
+});
+
+Interceptor.attach(Module.getExportByName(null, "LoadLibraryW"), {
+  onEnter: function (args) {
+    // Function: LoadLibraryW
+    console.log("\n[+] LoadLibraryW:");
+    // LPCWSTR lpLibFileName
+    console.log("\tlpLibFileName: " + args[0].readUtf16String());
 
   },
   onLeave: function (retval) {       
@@ -29,19 +41,6 @@ Interceptor.attach(Module.getExportByName(null, "LoadLibraryExA"), {
   }
 });
 
-Interceptor.attach(Module.getExportByName(null, "LoadLibraryW"), {
-  onEnter: function (args) {
-    // Function: LoadLibraryW
-    console.log("\n[+] LoadLibraryW:");
-    // LPCWSTR lpLibFileName
-    console.log("\tlpLibFileName: " + args[0].readUtf16String());
-
-  },
-  onLeave: function (retval) {       
-    console.log("Return value: " + retval);
-  }
-});
-
 Interceptor.attach(Module.getExportByName(null, "LoadLibraryExW"), {
   onEnter: function (args) {
     // Function: LoadLibraryExW
@@ -58,7 +57,6 @@ Interceptor.attach(Module.getExportByName(null, "LoadLibraryExW"), {
     console.log("Return value: " + retval);
   }
 });
-
 
 function resolve_LoadLibrary_dwFlags(dwFlags) {
   const flags = {
