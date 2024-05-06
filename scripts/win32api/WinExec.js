@@ -13,6 +13,7 @@ Interceptor.attach(Module.getExportByName(null, "WinExec"), {
   }
 });
 
+//support
 function resolve_WinExec_uCmdShow(uCmdShow) {
   const flags = {
     SW_HIDE:             0,
@@ -32,7 +33,9 @@ function resolve_WinExec_uCmdShow(uCmdShow) {
   const matchingFlag = Object.keys(flags).find(flag => flags[flag] === uCmdShow);
   return matchingFlag ? matchingFlag : uCmdShow.toString();
 }
+//support
 
+//support
 function resolve_WinExec_retval(retval) {
   const flags = {
 	ERROR_system_out_of_memory:			0,
@@ -43,3 +46,4 @@ function resolve_WinExec_retval(retval) {
 	// return success if return value doesnt match any of these error codes.
   return Object.keys(flags).find(flag => retval === flags[flag]) || "success";
 }
+//support

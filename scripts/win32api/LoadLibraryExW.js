@@ -1,46 +1,3 @@
-Interceptor.attach(Module.getExportByName(null, "LoadLibraryA"), {
-  onEnter: function (args) {
-    // Function: LoadLibraryA
-    console.log("\n[+] LoadLibraryA:");
-    // LPCSTR lpLibFileName
-    console.log("\tlpLibFileName: " + args[0].readAnsiString());
-
-  },
-  onLeave: function (retval) {       
-    console.log("Return value: " + retval);
-  }
-});
-
-Interceptor.attach(Module.getExportByName(null, "LoadLibraryW"), {
-  onEnter: function (args) {
-    // Function: LoadLibraryW
-    console.log("\n[+] LoadLibraryW:");
-    // LPCWSTR lpLibFileName
-    console.log("\tlpLibFileName: " + args[0].readUtf16String());
-
-  },
-  onLeave: function (retval) {       
-    console.log("Return value: " + retval);
-  }
-});
-
-Interceptor.attach(Module.getExportByName(null, "LoadLibraryExA"), {
-  onEnter: function (args) {
-    // Function: LoadLibraryExA
-    console.log("\n[+] LoadLibraryExA:");
-    // LPCSTR lpLibFileName
-    console.log("\tlpLibFileName: " + args[0].readAnsiString());
-    // HANDLE hFile
-    console.log("\thFile <reserved>: " + args[1]);
-    // DWORD dwFlags
-    console.log("\tdwFlags: " + args[2] + " (" + resolve_LoadLibrary_dwFlags(args[2].toInt32()) + ")");
-
-  },
-  onLeave: function (retval) {       
-    console.log("Return value: " + retval);
-  }
-});
-
 Interceptor.attach(Module.getExportByName(null, "LoadLibraryExW"), {
   onEnter: function (args) {
     // Function: LoadLibraryExW
@@ -58,6 +15,7 @@ Interceptor.attach(Module.getExportByName(null, "LoadLibraryExW"), {
   }
 });
 
+//support
 function resolve_LoadLibrary_dwFlags(dwFlags) {
   const flags = {
 	DONT_RESOLVE_DLL_REFERENCES: 0x00000001,	
@@ -80,3 +38,4 @@ function resolve_LoadLibrary_dwFlags(dwFlags) {
 
   return Object.keys(flags).filter(flag => (dwFlags & flags[flag])).join(" | ");
 }
+//support

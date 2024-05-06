@@ -18,10 +18,10 @@ This is a collection of Frida Interceptor definitions for Windows API that are c
 
 ### Memory
 
-- [ ] VirtualAlloc
-- [ ] VirtualAllocEx
-- [ ] VirtualProtect
-- [ ] VirtualProtectEx
+- [x] VirtualAlloc
+- [x] VirtualAllocEx
+- [x] VirtualProtect
+- [x] VirtualProtectEx
 - [ ] ReadProcessMemory
 - [ ] WriteProcessMemoryA/W
 - [ ] memcpy
@@ -134,7 +134,22 @@ This is a collection of Frida Interceptor definitions for Windows API that are c
 
 - [ ] NtAllocateVirtualMemory
 - [ ] NtWriteVirtualMemory
-- [ ] Nt/ZwUnmapViewOfSection
+- [ ] NtReadVirtualMemory
+- [ ] NtProtectVirtualMemory
+- [ ] NtQueryVirtualMemory
+- [ ] NtFreeVirtualMemory
+- [ ] NtSetInformationVirtualMemory
+- [ ] NtOpenProcess
+- [ ] NtOpenProcessToken
+- [ ] NtQueryInformationToken
+- [ ] NtClose
+- [ ] NtQuerySystemInformation
+- [ ] NtQueryInformationProcess
+- [ ] NtCreateSection
+- [ ] NtOpenSection
+- [ ] NtMapViewOfSection
+- [ ] NtUnmapViewOfSection
+- [ ] 
 
 ### Thread
 
