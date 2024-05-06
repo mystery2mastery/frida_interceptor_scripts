@@ -22,8 +22,8 @@ This is a collection of Frida Interceptor definitions for Windows API that are c
 - [x] VirtualAllocEx
 - [x] VirtualProtect
 - [x] VirtualProtectEx
-- [ ] ReadProcessMemory
-- [ ] WriteProcessMemoryA/W
+- [x] ReadProcessMemory
+- [x] WriteProcessMemory
 - [ ] memcpy
 - [ ] HeapAlloc
 
